@@ -7,6 +7,7 @@ export const useChartStore = defineStore('chart', () => {
     const endpoint = 'historical';
     const historicalCandles = ref([]);
     const isLoadingCandles = ref(false);
+    const noData = ref(false);
 
     // Calculate from_date based on interval to get approximately 2000 candles
     const calculateFromDate = (interval) => {
@@ -121,6 +122,8 @@ export const useChartStore = defineStore('chart', () => {
                 }
             }
 
+            noData.value = res.status && dataArray?.length === 0;
+
             // If valid API data exists
             if (Array.isArray(dataArray) && dataArray.length > 0) {
                 const transformedData = dataArray.map(candle => ({
@@ -153,6 +156,7 @@ export const useChartStore = defineStore('chart', () => {
     };
 
     return {
+        noData,
         historicalCandles,
         isLoadingCandles,
         getHistoricalData

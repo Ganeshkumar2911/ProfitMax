@@ -3,6 +3,7 @@
         <div class="flex justify-center items-end w-[100%] h-[110%] sm:h-[100%]" v-if="isLoading" >
             <Loader />
         </div>
+        <noDataFound v-if="noData" />
         <div 
             id="chart" 
             style="width:100%;height:90%"
@@ -17,13 +18,15 @@ import { defineEmits } from 'vue';
 import { useThemeStore } from '@/stores/theme';
 import { useRoute } from 'vue-router';
 import { useTickerStore } from '@/stores/ticker';
-import { useChartStore } from '@/stores/chart'; // Import the chart store
+import { useChartStore } from '@/stores/chart';
 import Loader from '@/components/Loader.vue';
+import noDataFound from '@/components/chart/noDataFound.vue';
 
 let currentCandle = null;
+const noData = ref(false);
 
 const tickerStore = useTickerStore();
-const chartStore = useChartStore(); // Initialize chart store
+const chartStore = useChartStore();
 
 const supports = getSupportedFigures();
 
@@ -377,6 +380,7 @@ const createChart = async () => {
         console.log('Candle data loaded:', candleData.length, 'candles');
         
         if (candleData.length === 0) {
+            noData.value = true;
             console.error('No candle data available to display');
             return;
         }
