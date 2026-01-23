@@ -3,7 +3,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "app.vercel.profit_max_three.twa",
+      "package_name": "com.profitmax.app",
       "sha256_cert_fingerprints": [
         "02:E9:23:62:CC:4C:96:12:A7:A5:47:15:B5:94:6F:F5:83:AB:F9:E3:9D:62:BA:7C:28:2E:E4:E6:7D:A4:C8:A6"
       ]
