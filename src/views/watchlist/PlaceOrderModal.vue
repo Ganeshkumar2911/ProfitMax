@@ -14,7 +14,7 @@
                         </button>
                         <button type="button" :class="[
                             'flex-1 py-1.5 lg:py-3 px-6 rounded-full text-base font-semibold transition-all',
-                            side === 'SELL' ? 'bg-red-500 text-white shadow-lg' : 'text-gray-700',
+                            side === 'SELL' ? 'bg-custom-red text-white shadow-lg' : 'text-gray-700',
                         ]" @click="side = 'SELL'">
                             Sell
                         </button>
@@ -148,7 +148,7 @@
 
                 <button @click="submit" :disabled="!side || inputValue === '' || inputValue <= 0" class="w-full py-3 rounded-lg font-semibold text-white transition
          disabled:opacity-40 disabled:cursor-not-allowed"
-                    :class="{ 'bg-custom-green': side == 'BUY', 'bg-custom-red': side == 'SELL' }">
+                    :class="{ 'bg-blue-500': side == 'BUY', 'bg-custom-red': side == 'SELL' }">
                     Place Order
                 </button>
             </div>
