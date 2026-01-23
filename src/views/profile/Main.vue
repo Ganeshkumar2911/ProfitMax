@@ -19,9 +19,9 @@
                     <div class="flex flex-col">
                         <h2 class="text-white text-lg font-medium">{{ profile?.username }}
                         </h2>
-                        <div class="bg-white/10 rounded-full px-2">
+                        <!-- <div class="bg-white/10 rounded-full px-2">
                             <span class="text-white text-xs">Member Since {{ formatDate(profile?.created_at) }}</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
