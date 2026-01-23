@@ -1,7 +1,7 @@
 <template>
     <div class="p-4">
-        <topBanner />
         <div class="sticky top-0 bg-white">
+            <topBanner />
             <h1 class="text-custom-primary text-[27.2px] font-bold">
                 Marketwatch
             </h1>

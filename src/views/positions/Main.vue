@@ -1,6 +1,6 @@
 <template>
     <div class="p-4">
-        <topBanner />
+        
         <!-- HEADER -->
 
 
@@ -8,7 +8,7 @@
 
         <!-- TABS -->
         <div class="sticky top-0 bg-white">
-
+            <topBanner />
             <div class="flex items-center justify-between ">
 
                 <h1 class="text-[27.2px] font-bold text-custom-primary">
