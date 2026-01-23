@@ -310,9 +310,9 @@ watch(() => themeStore.isDarkMode,
     (isDark) => {
         if (!chart) return;
         
-        const backgroundColor = isDark ? '#1e1e1e' : '#ffffff';
-        const textColor = isDark ? '#d9d9d9' : '#333333';
-        const gridColor = isDark ? '#404040' : '#e0e0e0';
+        const backgroundColor = isDark ? '#ffffff' : '#ffffff';
+        const textColor = isDark ? '#333333' : '#333333';
+        const gridColor = isDark ? '#e0e0e0' : '#e0e0e0';
         
         chart.setStyles({
             candle: {

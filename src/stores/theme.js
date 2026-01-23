@@ -4,20 +4,20 @@ import { ref, watch } from 'vue'
 
 export const useThemeStore = defineStore('theme', () => {
     
-  const isDarkMode = ref(localStorage.getItem('isDarkMode') === 'true')
+  const isDarkMode = ref(false)
 
   watch(isDarkMode, (newValue) => {
-    localStorage.setItem('isDarkMode', newValue.toString())
+    localStorage.setItem('isDarkMode', false);
   })
 
   // Toggle function22
   function toggleTheme() {
-    isDarkMode.value = !isDarkMode.value
+    isDarkMode.value = false
   }
 
   // Set theme explicitly
-  function setTheme(value) {
-    isDarkMode.value = value
+  function setTheme() {
+    isDarkMode.value = false;
   }
 
   return {
